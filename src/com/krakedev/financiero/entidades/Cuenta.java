@@ -64,15 +64,6 @@ public class Cuenta {
 		
 	}
 	
-	
-	public void crearCuenta(Cliente cliente) {
-		
-		String codigoStr=ultimoCodigo +"";
-		ultimoCodigo ++;
-		Cuenta c1= new Cuenta(codigoStr);
-		c1.setPropietario(cliente);
-		
-	}
-	
+
 
 }

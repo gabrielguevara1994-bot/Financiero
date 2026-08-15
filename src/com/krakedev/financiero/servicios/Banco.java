@@ -22,7 +22,16 @@ public class Banco {
 		Cuenta c1 = new Cuenta(codigoStr);
 		c1.setPropietario(cliente);
 		return c1;
-
+	}
+	
+	public boolean depositar(Cuenta cuenta, double monto ) {
+		if(monto>0) {
+			double nuevoSaldo=cuenta.getSaldoActual()+monto;
+			cuenta.setSaldoActual(nuevoSaldo);
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }

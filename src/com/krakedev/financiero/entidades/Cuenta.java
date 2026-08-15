@@ -5,12 +5,24 @@ public class Cuenta {
 	private String id;
 	private double saldoActual;
 	private String tipo;
+	private Cliente propietario;
 	
 	
 	public Cuenta(String id) {
 		this.id = id;
 		saldoActual=0;
 		tipo="A";
+		propietario=new Cliente();
+	}
+
+
+	public Cliente getPropietario() {
+		return propietario;
+	}
+
+
+	public void setPropietario(Cliente propietario) {
+		this.propietario = propietario;
 	}
 
 
@@ -48,6 +60,18 @@ public class Cuenta {
 		System.out.println("Id: " + id);
 		System.out.println("Saldo Actual: " + saldoActual);
 		System.out.println("Tipo: " + tipo);
+		System.out.println("Cédula cliente: " + propietario.getCedula());
+		
+	}
+	
+	
+	public void crearCuenta(Cliente cliente) {
+		
+		String codigoStr=ultimoCodigo +"";
+		ultimoCodigo ++;
+		Cuenta c1= new Cuenta(codigoStr);
+		c1.setPropietario(cliente);
+		
 	}
 	
 
